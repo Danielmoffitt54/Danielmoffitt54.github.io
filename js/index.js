@@ -56,7 +56,7 @@
 
     mySlides.push(slide0, slide1, slide2, slide3, slide4, slide5);
 
-    function createSlides() {
+    function createSlide() {
 
 
         var displaySlide = "";
@@ -83,6 +83,9 @@
 
         displayHead.innerText = displaySlide.header;
 
+        var divSlide = document.createElement("div");
+        divSlide.id = "slide";
+
         var div = document.createElement("div");
         var p = document.createElement("p");
 
@@ -90,29 +93,37 @@
 
         div.appendChild(p);
 
-        displayMain.appendChild(div);
+        divSlide.appendChild(div);
+
+        displayMain.appendChild(divSlide);
     }
 
-    createSlides();
+    createSlide();
+
+    function deleteSlide() {
+        document.getElementById("slide").remove();
+    }
 
     function nextSlide() {
+        deleteSlide();
         if (currentSlide === 5) {
             currentSlide = 0;
         } else {
             currentSlide++;
         }
-        createSlides();
+        createSlide();
     }
 
     next.addEventListener("click", nextSlide);
 
     function previousSlide() {
+        deleteSlide();
         if (currentSlide === 0) {
             currentSlide = 5;
         } else {
             currentSlide--;
         }
-        createSlides();
+        createSlide();
     }
 
     previous.addEventListener("click", previousSlide);
