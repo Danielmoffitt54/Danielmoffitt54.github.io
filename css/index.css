@@ -4,57 +4,82 @@ body {
     font-family: 'Maven Pro', sans-serif;
     color: whitesmoke;
 }
+@media screen and (max-width: 1024px){
+    header {
+        display: none;
+    }
 
-header, footer {
-    width: 100%;
+    header h1 {
+        margin: 0;
+        padding: 5px 0;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: 28pt;
+    }
+
+    main {
+        margin: 15% 5% 15% 5%;
+    }
+
+    /* Mobile only Footer/Navbar */
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background: linear-gradient(#6f068c, #bd00fc);
+        display: grid;
+        grid-template-columns: 15% 70% 15%;
+    }
+
+    .footerNav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer i {
+        font-size: 36px !important;
+        color: whitesmoke;
+    }
+
+    #displayHeader {
+        position: fixed;
+        width: 170px;
+        height: 40px;
+        margin: 0;
+        padding: 0 15px;
+        font-size: 32px;
+        text-align: center;
+        background: linear-gradient(#000, #303030);
+        color: whitesmoke;
+        border: none;
+        border-radius: 25px;
+    }
+
+    #dropUpMenu {
+        position: fixed;
+        bottom: 60px;
+        width: 100vw;
+        height: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(48, 48, 48, 0.75);
+    }
+
+    .dropUpItem {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        color: whitesmoke;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+    }
+    button:focus {
+        outline: none;
+    }
 }
-
-header {
-    top: 0;
-    background: linear-gradient(#bd00fc , #6f068c);
-}
-
-header h1 {
-    margin: 0;
-    padding: 5px 0;
-    text-transform: capitalize;
-    text-align: center;
-    font-size: 28pt;
-}
-
-main {
-    margin: 5% 5% 15% 5%;
-}
-
-/* Mobile only Footer/Navbar */
-footer {
-    position: fixed;
-    bottom: 0;
-    height: 10%;
-    background: linear-gradient(#6f068c, #bd00fc);
-    display: grid;
-    grid-template-columns: 15% 70% 15%;
-}
-
-.footerNav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-}
-
-footer i {
-    font-size: 36px !important;
-    color: whitesmoke;
-}
-
-footer p {
-    width: 145px;
-    height: 38px;
-    margin: 0;
-    padding: 5px 15px;
-    text-align: center;
-    background: linear-gradient(#000, #303030);
-    border-radius: 25px;
-}
-

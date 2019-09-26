@@ -5,9 +5,17 @@
     var displayMain = document.getElementById("mainContent");
     // ^ Main Div
     
+    var footer = document.getElementById("footer");
     var previous = document.getElementById("prevSlide");
     var next = document.getElementById("nextSlide");
     var displayHead = document.getElementById("displayHeader");
+    var footerNavBar = document.getElementById("dropUpMenu");
+    var about = document.getElementById("aboutBtn");
+    var education =document.getElementById("educationBtn");
+    var skills = document.getElementById("skillsBtn");
+    var interest = document.getElementById("interestBtn");
+    var projects = document.getElementById("projectsBtn");
+    var contact = document.getElementById("contactBtn");
     // ^ Mobile Nav-bar variables
 
     var mySlides = [];
@@ -15,7 +23,7 @@
     var slide0 = {
         header: "About",
         p: {
-            a: "This is my about.",
+            a: "bio...",
         },
     }
     
@@ -57,7 +65,6 @@
     mySlides.push(slide0, slide1, slide2, slide3, slide4, slide5);
 
     function createSlide() {
-
 
         var displaySlide = "";
 
@@ -127,6 +134,30 @@
     }
 
     previous.addEventListener("click", previousSlide);
+
+    function interactNav() {
+        if (footerNavBar.style.display === "none") {
+            footerNavBar.style.display = "flex";
+        } else {
+            footerNavBar.style.display = "none";
+        }
+    }
+
+    displayHead.addEventListener("click", interactNav);
+
+    function quickNav(input) {
+        deleteSlide();
+        currentSlide = input;
+        createSlide();
+        footerNavBar.style.display = "none";
+    }
+
+    about.addEventListener("click", function(){ quickNav(0); });
+    education.addEventListener("click", function(){ quickNav(1); });
+    skills.addEventListener("click", function(){ quickNav(2); });
+    interest.addEventListener("click", function(){ quickNav(3); });
+    projects.addEventListener("click", function(){ quickNav(4); });
+    contact.addEventListener("click", function(){ quickNav(5); });
 
 })();
 
