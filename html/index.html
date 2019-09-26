@@ -17,59 +17,65 @@
 <!-- Be yout whole, unique self and differentiate -->
 <!-- actively use the platforms your on -->
 <body>
-    <!-- Header -->
-    <header>
-        <!-- Name -->
-        <h1>Daniel Moffitt</h1>
-    </header>
-    <!-- Main -->
-    <main id="mainContent">
-    </main>
-    <!-- Footer (mobile) -->
-    <footer id="footer">
-        <!-- Left arrow -->
-        <div class="footerNav">
+    <!-- Navbar -->
+    <div class="navBar">
+        <!-- Previous slide button box -->
+        <div class="navBox">
+            <!-- Previous slide button -->
             <button id="prevSlide">
                 <i class="material-icons">keyboard_arrow_left</i>
             </button>
         </div>
-        <div class="footerNav">
+        <!-- Slide display/Drop-up box-->
+        <div class="displayBox">
+            <div class="headerImg"></div>
+            <hr class="headerDivider">
             <button id="displayHeader"></button>
-            <div id="dropUpMenu" style="display: none;">
+            <!-- Drop-up Menu -->
+            <div id="dropUpMenu">
                 <!-- About nav -->
-                <button id="aboutBtn" class="dropUpItem">
+                <button id="aboutBtn" class="dropUpBtn">
+                    <div class="dropUpImg"></div>
                     <h3>About</h3>
                 </button>
                 <!-- Education nav -->
-                <button id="educationBtn"  class="dropUpItem">
+                <button id="educationBtn"  class="dropUpBtn">
+                    <div class="dropUpImg"></div>
                     <h3>Education</h3>
                 </button>
                 <!-- Skills nav -->
-                <button id="skillsBtn"  class="dropUpItem">
+                <button id="skillsBtn"  class="dropUpBtn">
+                    <div class="dropUpImg"></div>
                     <h3>Skills</h3>
                 </button>
                 <!-- Interest nav -->
-                <button id="interestBtn"  class="dropUpItem">
+                <button id="interestBtn"  class="dropUpBtn">
+                    <div class="dropUpImg"></div>
                     <h3>Interest</h3>
                 </button>
                 <!-- Projects nav -->
-                <button id="projectsBtn"  class="dropUpItem">
+                <button id="projectsBtn"  class="dropUpBtn">
+                    <div class="dropUpImg"></div>
                     <h3>Projects</h3>
                 </button>
                 <!-- Contact nav -->
-                <button id="contactBtn"  class="dropUpItem">
+                <button id="contactBtn"  class="dropUpBtn">
+                    <div class="dropUpImg"></div>
                     <h3>Contact</h3>
                 </button>
             </div>
         </div>
-        <!-- Right arrow -->
-        <div class="footerNav">
+        <!-- Next slide button box -->
+        <div class="navBox">
+            <!-- Next slide button -->
             <button id="nextSlide">
                 <i class="material-icons">keyboard_arrow_right</i>
             </button>
         </div>
-    </footer>
     </div>
+    <!-- Main -->
+    <main id="mainContent">
+    </main>
     <!-- scripts for custom js -->
     <script type="text/javascript" src="../js/index.js"></script>
 </body>

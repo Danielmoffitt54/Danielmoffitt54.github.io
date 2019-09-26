@@ -1,24 +1,21 @@
 (function () {
-    var currentSlide = 0;
-    // ^ Current slide displayed
-
     var displayMain = document.getElementById("mainContent");
     // ^ Main Div
     
-    var footer = document.getElementById("footer");
     var previous = document.getElementById("prevSlide");
     var next = document.getElementById("nextSlide");
     var displayHead = document.getElementById("displayHeader");
     var footerNavBar = document.getElementById("dropUpMenu");
     var about = document.getElementById("aboutBtn");
-    var education =document.getElementById("educationBtn");
+    var education = document.getElementById("educationBtn");
     var skills = document.getElementById("skillsBtn");
     var interest = document.getElementById("interestBtn");
     var projects = document.getElementById("projectsBtn");
     var contact = document.getElementById("contactBtn");
-    // ^ Mobile Nav-bar variables
+    // ^ Navbar variables
 
     var mySlides = [];
+    // ^ Creates Array to host the different slides
 
     var slide0 = {
         header: "About",
@@ -26,6 +23,7 @@
             a: "bio...",
         },
     }
+    // ^ About slide
     
     var slide1 = {
         header: "Education",
@@ -33,6 +31,7 @@
             a: "List education and give brief summary of each.",
         },
     }
+    // ^ Education slide
 
     var slide2 = {
         header: "Skills",
@@ -40,6 +39,7 @@
             a: "Go over the different languages I know and list the diffent skills acquired at BcSkills.",
         },
     }
+    // ^ Skills slide
 
     var slide3= {
         header: "Interest",
@@ -47,6 +47,7 @@
             a: "List my the different passions I have and things that I find of interest.",
         }
     }
+    // ^ Interest slide
 
     var slide4 = {
         header: "Projects",
@@ -54,6 +55,7 @@
             a: "List some projects I've finished and display a couple here.",
         },
     }
+    // ^ Projects slide
 
     var slide5 = {
         header: "Contact",
@@ -61,11 +63,16 @@
             a: "Give my Email, GitHub, LinkedIn links.",
         }
     }
+    // ^ Contact slide
+
 
     mySlides.push(slide0, slide1, slide2, slide3, slide4, slide5);
+    // ^ Pushes all objects to be stored inside the array mySlides
+
+    var currentSlide = 0;
+    // ^ Current slide displayed
 
     function createSlide() {
-
         var displaySlide = "";
 
         switch (currentSlide) {
@@ -89,6 +96,7 @@
         }
 
         displayHead.innerText = displaySlide.header;
+        // ^ Displays current slide to user
 
         var divSlide = document.createElement("div");
         divSlide.id = "slide";
@@ -149,7 +157,9 @@
         deleteSlide();
         currentSlide = input;
         createSlide();
+        // Bug start
         footerNavBar.style.display = "none";
+        // bug end - needs if condition for screen size (buttons display none after click on browser screen width.)
     }
 
     about.addEventListener("click", function(){ quickNav(0); });
@@ -160,4 +170,3 @@
     contact.addEventListener("click", function(){ quickNav(5); });
 
 })();
-
