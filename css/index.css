@@ -79,6 +79,11 @@ body {
         margin: 5px 0;
     }
 
+    button {
+        background-color: transparent;
+        border: none;
+    }
+
     .navBar button:focus {
         outline: none;
     }
