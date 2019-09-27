@@ -10,7 +10,10 @@
     <!-- link to google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Open+Sans&display=swap" rel="stylesheet">
     <!-- link to custom css -->
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <!-- consitstant professional headshots across all platforms -->
 <!-- Descriptions that reflect your current goal -->
@@ -28,14 +31,14 @@
         </div>
         <!-- Slide display/Drop-up box-->
         <div class="displayBox">
-            <div class="headerImg"></div>
+            <img class="headerImg" src="img/imgMain.png" alt="Picture of Daniel Moffitt">
             <hr class="headerDivider">
             <button id="displayHeader"></button>
             <!-- Drop-up Menu -->
             <div id="dropUpMenu">
                 <!-- About nav -->
                 <button id="aboutBtn" class="dropUpBtn">
-                    <div class="dropUpImg"></div>
+                    <img class="dropUpImg" src="img/imgMain.png" alt="">
                     <h3>About</h3>
                 </button>
                 <!-- Education nav -->
@@ -77,6 +80,6 @@
     <main id="mainContent">
     </main>
     <!-- scripts for custom js -->
-    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

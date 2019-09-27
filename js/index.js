@@ -5,7 +5,7 @@
     var previous = document.getElementById("prevSlide");
     var next = document.getElementById("nextSlide");
     var displayHead = document.getElementById("displayHeader");
-    var footerNavBar = document.getElementById("dropUpMenu");
+    var navBar = document.getElementById("dropUpMenu");
     var about = document.getElementById("aboutBtn");
     var education = document.getElementById("educationBtn");
     var skills = document.getElementById("skillsBtn");
@@ -26,7 +26,7 @@
     // ^ About slide
     
     var slide1 = {
-        header: "Education",
+        title: "Education",
         p: {
             a: "List education and give brief summary of each.",
         },
@@ -34,7 +34,7 @@
     // ^ Education slide
 
     var slide2 = {
-        header: "Skills",
+        title: "Skills",
         p: {
             a: "Go over the different languages I know and list the diffent skills acquired at BcSkills.",
         },
@@ -42,7 +42,7 @@
     // ^ Skills slide
 
     var slide3= {
-        header: "Interest",
+        title: "Interest",
         p: {
             a: "List my the different passions I have and things that I find of interest.",
         }
@@ -50,7 +50,7 @@
     // ^ Interest slide
 
     var slide4 = {
-        header: "Projects",
+        title: "Projects",
         p: {
             a: "List some projects I've finished and display a couple here.",
         },
@@ -58,7 +58,7 @@
     // ^ Projects slide
 
     var slide5 = {
-        header: "Contact",
+        title: "Contact",
         p: {
             a: "Give my Email, GitHub, LinkedIn links.",
         }
@@ -95,7 +95,7 @@
                 displaySlide = slide0;
         }
 
-        displayHead.innerText = displaySlide.header;
+        displayHead.innerText = displaySlide.title;
         // ^ Displays current slide to user
 
         var divSlide = document.createElement("div");
@@ -144,10 +144,10 @@
     previous.addEventListener("click", previousSlide);
 
     function interactNav() {
-        if (footerNavBar.style.display === "none") {
-            footerNavBar.style.display = "flex";
+        if (navBar.style.display === "none") {
+            navBar.style.display = "flex";
         } else {
-            footerNavBar.style.display = "none";
+            navBar.style.display = "none";
         }
     }
 
@@ -157,9 +157,6 @@
         deleteSlide();
         currentSlide = input;
         createSlide();
-        // Bug start
-        footerNavBar.style.display = "none";
-        // bug end - needs if condition for screen size (buttons display none after click on browser screen width.)
     }
 
     about.addEventListener("click", function(){ quickNav(0); });
