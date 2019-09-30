@@ -52,11 +52,12 @@ body {
         bottom: 60px;
         width: 100vw;
         height: 90%;
+        /* ^ Bug - needs height of (jquery monitor height - 60) */
         display: none;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        background-color: rgba(48, 48, 48, 0.75);
+        background-color: rgba(48, 48, 48, 0.85);
     }
 
     .dropUpBtn {
@@ -98,8 +99,9 @@ body {
             width: 60%;
         }
 
-        .dropUpMenu {
+        #dropUpMenu {
             height: 100%;
+            /* ^ Bug - needs height of jquery monitor height - 60 */
         }
     }
 }
