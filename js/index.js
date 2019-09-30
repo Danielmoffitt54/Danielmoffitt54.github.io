@@ -83,7 +83,7 @@
         },
         ul: {
             a: "MongoDB",
-            b: "Express",
+            b: "Express.JS",
         },
     }
     // ^ slide2 end.
@@ -154,8 +154,8 @@
             },
         },
         resume: {
-            subHeader: "Google Docs",
-            click: "Resume",
+            subHeader: "Resume",
+            link: "Google Docs",
             url: "",
         },
     }
@@ -510,7 +510,7 @@
             anchor.target = "_target";
 
             subHeaderStr.innerText = displaySlide.resume.subHeader + " - ";
-            anchor.innerText = displaySlide.resume.click;
+            anchor.innerText = displaySlide.resume.link;
 
             subHeaderStr.appendChild(anchor);
 
