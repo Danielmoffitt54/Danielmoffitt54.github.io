@@ -464,29 +464,28 @@
             // ^ Create variable divSlide with id as "slide".
 
             for (letter in displaySlide.socialMedia.subHeader) {
-                if () {
-                    var contentBlock = document.createElement("div");
-                    contentBlock.classList.add("contentBlock");
-                    // ^ Create variable contentBlock with class contentBlock.
+                var contentBlock = document.createElement("div");
+                contentBlock.classList.add("contentBlock");
+                // ^ Create variable contentBlock with class contentBlock.
 
-                    var subHeader = document.createElement("h3");
-                    var url = document.createElement("a");
-                    url.href = displaySlide.socialMedia.url[letter];
-                    url.target = "_blank";
-                    // ^ Create variable subHeader and url and give url the corresponding letter of the url object and target value of "_blank".
+                var subHeader = document.createElement("h3");
+                var url = document.createElement("a");
+                url.href = displaySlide.socialMedia.url[letter];
+                url.target = "_blank";
+                // ^ Create variable subHeader and url and give url the corresponding letter of the url object and target value of "_blank".
 
-                    subHeader.innerText = displaySlide.socialMedia.subHeader[letter];
-                    url.innerText = displaySlide.socialMedia.url[letter];
-                    // ^ Give subHeader and url values of letter for their corresponding object.
+                subHeader.innerText = displaySlide.socialMedia.subHeader[letter];
+                url.innerText = displaySlide.socialMedia.url[letter];
+                // ^ Give subHeader and url values of letter for their corresponding object.
 
-                    contentBlock.appendChild(subHeader);
-                    contentBlock.appendChild(url);
-                    // ^ Send subHeader and url to contentBlock.
+                contentBlock.appendChild(subHeader);
+                contentBlock.appendChild(url);
+                // ^ Send subHeader and url to contentBlock.
 
-                    divSlide.appendChild(contentBlock);
-                    // ^ Send contentBlock to divSlide.
-                }
-                // ^ For each letter inside socialMedia subHeader object of slide4, create a div, h3, and anchor elements, with the letter value of slide4's socialMedia objects.
+                divSlide.appendChild(contentBlock);
+                // ^ Send contentBlock to divSlide.
+            }
+            // ^ For each letter inside socialMedia subHeader object of slide4, create a div, h3, and anchor elements, with the letter value of slide4's socialMedia objects.
 
 
             for (letter in displaySlide.personal.subHeader) {
