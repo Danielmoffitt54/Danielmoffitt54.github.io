@@ -40,16 +40,19 @@ body {
 
     #displayHeader {
         position: fixed;
-        width: 170px;
+        width: 60%;
         height: 40px;
         margin: 0;
         padding: 0 15px;
         font-size: 32px;
-        text-align: center;
         background: linear-gradient(#000, #303030);
         color: #f5f5f5;
         border: none;
-        border-radius: 25px;
+        border-radius: 50px;
+    }
+
+    #prevSlide, #nextSlide {
+        height: 100%;
     }
 
     #dropUpMenu {
@@ -57,7 +60,6 @@ body {
         bottom: 60px;
         width: 100vw;
         height: 90%;
-        /* ^ Bug - needs height of (jquery monitor height - 60) */
         display: none;
         flex-wrap: wrap;
         justify-content: center;
@@ -66,9 +68,9 @@ body {
     }
 
     .dropUpBtn {
-        width: 80px;
-        height: 80px;
-        margin: 10px 20px;
+        width: 70px;
+        height: 70px;
+        margin: 10px 15px;
         color: #f5f5f5;
         border: none;
         background-color: transparent;
@@ -90,47 +92,39 @@ body {
     }
 
         /* Main Content */
-
     main {
         margin: 10% 5% 80px 5%;
     }
 
-    .contentBlock {
-        margin: 15px 0;
+    p {
+        margin: 0 0 0 10px;
     }
 
-    h1 {
-        margin: 5px 0;
-        font-family: 'Ubuntu', sans-serif;
+    .contentBlock, #slide h1, #slide h2, #slide h3 {
+        margin: 0;
+        padding: 0;
+    }
+
+    #slide h1 {
         font-size: 55pt;
     }
 
-    #slide h2 {
+    #slide h1, #slide h2 {
         font-family: 'Ubuntu', sans-serif;
-
     }
 
     #slide h3 {
-        margin: 20px 0 0 0;
-        font-family: 'Kanit', sans-serif;
-        font-size: 20pt;
+        font-size: 18pt;
         color: #bd00fc;
     }
 
     #slide h4 {
-        margin: 0 0 10px 0;
-        font-family: 'Kanit', sans-serif;
-        font-size: 15pt;
+        font-size: 12pt;
         color: #8f8f8f;
     }
 
-    #slide p {
-        margin: 5px 0 5px 5px;
-    }
-    
-    ul {
-        margin: 5px 0 !important;
-        padding-left: 25px;
+    #slide h3, #slide h4 {
+        font-family: 'Kanit', sans-serif;
     }
 
         /* About Slide */
@@ -142,20 +136,44 @@ body {
         color: #8f8f8f;
     }
 
+    .aboutDivider {
+        margin: 20px 0;
+    }
+
+    .aboutSlide .contentBlock {
+        margin-top: 20px;
+    }
+
+
+        /* Education Slide */
+    .educationSlide h4 {
+        margin: 0 0 10px 0;
+    }
         /* Skills Slide */
+    .iconBlock {
+        margin: 0 15px 20px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     .skillsIcon {
         margin: 5px;
         color: #f5f5f5 !important;
     }
 
+    .skillsSlide li {
+        margin-left: 25px;
+    }
+
+        /* Projects Slide */
     .projectBlock {
         margin: 25px 0;
         border: 2px solid #f5f5f5;
         border-radius: 10px;
     }
 
-    .projectBlock h3 {
-        margin: 0 !important;
+    .projectsSlide h3 {
         padding: 5px 10px;
         background-color: #f5f5f5;
         color: #8f8f8f !important;
@@ -163,26 +181,86 @@ body {
         border-top-right-radius: 7px;
     }
 
-    .projectBlock p {
-        margin: 0 !important;
-        padding: 2px 5px;
+    .projectsSlide a {
+        margin-left: 10px;
+    }
+
+    .projectsSlide p {
+        margin: 0;
+        padding: 5px 8px;
         border-top: solid 1px #f5f5f5;
+    }
+
+        /* Contact Slide */
+    .contactSlide {
+        text-align: center;
+    }
+
+    .socialMediaBlock {
+        margin-bottom: 10px;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .resumeBlock {
+        width: 80%;
+        margin: 0 auto 10px;
+        padding: 10px 0;
+        border-radius: 10px;
+        background-color: #8f8f8f;
     }
 
     a {
         color: #bd00fc;
-        
+    }
+
+    /* mobile view rotated */
+    @media screen and (max-height: 450px) {
+        main {
+            margin: 5% 5% 80px 5%;
+        }
+
     }
 
     /* Tablet view */
-    @media screen and (min-width: 500px) {
+    @media screen and (min-height: 820px) {
+        main {
+            margin: 10% 5% 110px 5%;
+        }
+
+        .firstName {
+            display: inline-block;
+            font-size: 65pt !important;
+        }
+
+        .lastName {
+            margin-left: 25px !important;
+            display: inline-block;
+            font-size: 65pt !important;
+        }
+
+        .navBar {
+            height: 100px;
+        }
+
+        .navBar i {
+            font-size: 60px !important;
+        }
+
         #displayHeader {
-            width: 60%;
+            height: 70px;
+            font-size: 40pt;
         }
 
         #dropUpMenu {
             height: 100%;
-            /* ^ Bug - needs height of jquery monitor height - 60 */
+            bottom: 100px;
+        }
+
+        .dropUpBtn {
+            width: 150px;
+            height: 150px;
+            margin: 25px;
         }
     }
 }
@@ -235,14 +313,15 @@ body {
         width: 80%;
         display: block;
         margin: 5px auto;
-        font-size: 15px;
         font-family: 'Maven Pro', sans-serif;
         color: #f5f5f5;
         background: transparent;
     }
 
-    .dropUpBtn:hover {
-        background: linear-gradient( to right, rgba(245, 245, 245,0), rgba(245, 245, 245, 0.15), rgba(245, 245, 245,0));
+    .dropUpBtn h3 {
+        margin: 10px 0;
+        font-size: 20pt;
+        color: #f5f5f5 !important;
     }
 
     button {
@@ -251,6 +330,10 @@ body {
 
     button:focus {
         outline: none;
+    }
+
+    .dropUpBtn:hover {
+        background: linear-gradient( to right, rgba(245, 245, 245,0), rgba(245, 245, 245, 0.15), rgba(245, 245, 245,0));
     }
 
     .activeSlide {
@@ -262,8 +345,85 @@ body {
         margin: 50px 10%;
     }
 
+    p {
+        margin: 0 0 0 25px;
+        font-size: 15pt;
+    }
+
+    h3 {
+        font-size: 20pt;
+        color: #bd00fc;
+    }
+
+    h4 {
+        font-size: 16pt;
+        color: #8f8f8f;
+    }
+
+    .firstName, .lastName {
+        margin: 10px 0;
+        display: inline-block;
+        font-size: 65pt;
+    }
+
+    .firstName {
+        color: #bd00fc;
+    }
+
+    .lastName {
+        margin-left: 25px;
+        color: #8f8f8f;
+    }
+
+    .aboutSlide h3 {
+        margin-bottom: 25px;
+    }
+
+    .iconBlock {
+        margin: 0 25px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     .skillsIcon {
-        width: 200px;
-        height: 200px;
+        width: 100px;
+    }
+
+    li {
+        font-size: 14pt;
+    }
+
+    /* Projects Slide */
+    .projectBlock {
+        margin: 25px 0;
+        border: 2px solid #f5f5f5;
+        border-radius: 10px;
+    }
+
+    .projectsSlide h3 {
+        margin: 0;
+        background-color: #f5f5f5;
+        color: #8f8f8f !important;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+    }
+
+    .projectsSlide a {
+        margin-left: 10px;
+    }
+
+    .projectsSlide p {
+        margin: 0;
+        padding: 5px 8px;
+        border-top: solid 1px #f5f5f5;
+    }
+    
+    .contactSlide h3 {
+        margin: 25px 0 10px 0;
+    }
+
+    .contactSlide .contentBlock a {
+        margin-left: 25px;
     }
 }

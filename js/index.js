@@ -38,20 +38,16 @@
         title: "Education",
         intro: "List education and give brief summary of each.",
         subHeader: {
-            a: "Mount Juliet High School",
-            b: "BCskills",
+            a: "Barren County Interapt Skills | Cohort II",
         },
         attended: {
-            a: "2009 - 2013",
-            b: "August 2019 - PRESENT",
+            a: "August 2019 - PRESENT",
         },
         location: {
-            a: "Mount Juliet, TN",
-            b: "Glasgow, KY",
+            a: "Glasgow, KY",
         },
         description: {
-            a: "GPA - ",
-            b: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quaerat ex harum beatae, cum neque quia similique quidem esse et recusandae omnis ut quasi illo sapiente sed, illum facere quos! Laboriosam cum aperiam consequuntur rerum ea eligendi, cupiditate perspiciatis quidem facere, harum quasi quod! A mollitia perferendis iusto veritatis doloribus.",
+            a: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quaerat ex harum beatae, cum neque quia similique quidem esse et recusandae omnis ut quasi illo sapiente sed, illum facere quos! Laboriosam cum aperiam consequuntur rerum ea eligendi, cupiditate perspiciatis quidem facere, harum quasi quod! A mollitia perferendis iusto veritatis doloribus.",
         },
     }
     // ^ slide1 end.
@@ -82,42 +78,29 @@
     var slide3 = {
         title: "Projects",
         intro: "List below provides projects I have worked on and currently building.",
-        finished: {
-            subHeader: {
-                a: "To-Do list",
-                b: "Tip Calculator",
-                c: "JavaScript Clock",
-            },
-            href: {
-                a: "https://github.com/Danielmoffitt54/To-Do-List",
-                b: "https://github.com/Danielmoffitt54/Tip-Calculator",
-                c: "https://github.com/Danielmoffitt54/JavaScript-Clock",
-            },
-            description: {
-                a: "Enter what you need to do inside the input box then manage your list by marking if completed or removing an item.",
-                b: "Enter your total bill amount, service cost, and number of people sharing the bill, to determine your tip and total cost for each person.",
-                c: "Clock updating every second displaying the current day of the week, date, and local time."
-            },
-            type: {
-                a: "Website",
-                b: "Website",
-                c: "Website"
-            }
+        subHeader: {
+            a: "Vette City Lacrosse",
+            b: "JavaScript Clock",
+            c: "Tip Calculator",
+            d: "To-Do list",
         },
-        inProgress: {
-            state: "(In Construction)",
-            subHeader: {
-                a: "Vette City Lacrosse",
-            },
-            href: {
-                a: "https://github.com/Danielmoffitt54/Vandals-Website",
-            },
-            description: {
-                a: "Create an account to sign up or browse over a variety of offered packages or to shop online for team merchandise.",
-            },
-            type: {
-                a: "Website",
-            }
+        href: {
+            a: "https://github.com/Danielmoffitt54/Vandals-Website",
+            b: "https://github.com/Danielmoffitt54/JavaScript-Clock",
+            c: "https://github.com/Danielmoffitt54/Tip-Calculator",
+            d: "https://github.com/Danielmoffitt54/To-Do-List",
+        },
+        description: {
+            a: "Create an account to sign up or browse over a variety of offered packages or to shop online for team merchandise.",
+            b: "Clock updating every second displaying the current day of the week, date, and local time.",
+            c: "Enter your total bill amount, service cost, and number of people sharing the bill, to determine your tip and total cost for each person.",
+            d: "Enter what you need to do inside the input box then manage your list by marking if completed or removing an item.",
+        },
+        info: {
+            a: "Website (Current Project)",
+            b: "Webpage",
+            c: "Webpage",
+            d: "Webpage",
         }
     }
     // ^ slide4 end.
@@ -146,7 +129,6 @@
         },
         resume: {
             subHeader: "Resume",
-            link: "Google Docs",
             url: "",
         },
     }
@@ -198,6 +180,7 @@
 
             var divSlide = document.createElement("div");
             divSlide.id = "slide";
+            divSlide.classList.add("aboutSlide");
             // ^ Create variable divSlide with id as "slide".
 
             var firstName = document.createElement("h1");
@@ -257,6 +240,7 @@
 
             var divSlide = document.createElement("div");
             divSlide.id = "slide";
+            divSlide.classList.add("educationSlide");
             // ^ Create variable divSlide with id as "slide".
 
             for (letter in displaySlide.subHeader) {
@@ -300,6 +284,7 @@
 
             var divSlide = document.createElement("div");
             divSlide.id = "slide";
+            divSlide.classList.add("skillsSlide");
             // ^ Create variable divSlide with id as "slide".
 
             for (letter in displaySlide.subHeader) {
@@ -314,7 +299,7 @@
 
                 if (letter === "a") {
                     var contentBlock = document.createElement("div");
-                    contentBlock.classList.add("contentBlock")
+                    contentBlock.classList.add("iconBlock")
                     // ^ Create variable contentBlock with class contentBlock.
 
                     for (letter in displaySlide.class) {
@@ -367,6 +352,7 @@
 
             var divSlide = document.createElement("div");
             divSlide.id = "slide";
+            divSlide.classList.add("projectsSlide");
             // ^ Create variable divSlide with id as "slide".
 
             var intro = document.createElement("h2");
@@ -374,7 +360,7 @@
             divSlide.appendChild(intro);
             // ^ Creates variable intro with value of object's intro and sends inside divSlide.
 
-            for (letter in displaySlide.finished.subHeader) {
+            for (letter in displaySlide.subHeader) {
                 var projectBlock = document.createElement("div");
                 projectBlock.classList.add("projectBlock");
                 // ^ Create variable projectBlock with class projectBlock
@@ -383,69 +369,31 @@
                 // ^ Create variable subHeaderStr.
 
                 var anchor = document.createElement("a");
-                anchor.href = displaySlide.finished.href[letter];
+                anchor.href = displaySlide.href[letter];
                 anchor.target = "_blank";
                 // ^ Create variable anchor with href and target attributes of the corresponding letter in href object and _target.
 
                 var description = document.createElement("p");
-                var type = document.createElement("p");
-                // ^ Creates variables description and type.
+                var info = document.createElement("p");
+                // ^ Creates variables description and info.
 
-                anchor.innerText = displaySlide.finished.subHeader[letter];
-                description.innerText = displaySlide.finished.description[letter];
-                type.innerText = displaySlide.finished.type[letter];
-                // ^ Gives anchor, description, and type values of corresponding letter in their objects.
+                anchor.innerText = displaySlide.subHeader[letter];
+                description.innerText = displaySlide.description[letter];
+                info.innerText = displaySlide.info[letter];
+                // ^ Gives anchor, description, and info values of corresponding letter in their objects.
 
                 subHeaderStr.appendChild(anchor);
                 // Sends anchor inside subHeaderStr.
 
                 projectBlock.appendChild(subHeaderStr);
                 projectBlock.appendChild(description);
-                projectBlock.appendChild(type);
-                // ^ Sends subHeaderStr, description, and type inside projectBlock.
+                projectBlock.appendChild(info);
+                // ^ Sends subHeaderStr, description, and info inside projectBlock.
 
                 divSlide.appendChild(projectBlock);
                 // ^ Sends projectBlock inside divSlide.
             }
             // ^ For each letter inside finished subHeader object of slide3, create a h3, anchor, and p elements with the letter value of slide3's finished objects.
-
-            for (letter in displaySlide.inProgress.subHeader) {
-                var projectBlock = document.createElement("div");
-                projectBlock.classList.add("projectBlock");
-                // ^ Create variable projectBlock with class projectBlock.
-
-                var subHeaderStr = document.createElement("h3");
-                // ^ Create variable subHeaderStr.
-
-                var anchor = document.createElement("a");
-                anchor.href = displaySlide.inProgress.href[letter];
-                anchor.target = "_blank";
-                // ^ Create variable anchor with href and target attributes of the corresponding letter in href object and _target.
-
-                var description = document.createElement("p");
-                var type = document.createElement("p");
-                // ^ Creates variables description and type.
-
-                anchor.innerText = displaySlide.inProgress.subHeader[letter];
-                description.innerText = displaySlide.inProgress.description[letter];
-                type.innerText = displaySlide.inProgress.type[letter];
-                // ^ Gives anchor, description, and type values of corresponding letter in their objects.
-
-                subHeaderStr.appendChild(anchor);
-                // Sends anchor inside subHeaderStr.
-
-                subHeaderStr.innerHTML += " " + displaySlide.inProgress.state;
-                // ^ Gives subHeaderStr value of inProgress value of state at the end of existing html.
-
-                projectBlock.appendChild(subHeaderStr);
-                projectBlock.appendChild(description);
-                projectBlock.appendChild(type);
-                // ^ Sends subHeaderStr, description, and type inside projectBlock.
-
-                divSlide.appendChild(projectBlock);
-                // ^ Sends projectBlock inside divSlide.
-            }
-            // ^ For each letter inside inProgress subHeader object of slide3, create a h3, anchor, and p elements with the letter value of slide3's finished objects.
 
             displayMain.appendChild(divSlide);
             // ^ Send divSlide inside displayMain to be displayed on index.html.
@@ -461,31 +409,87 @@
 
             var divSlide = document.createElement("div");
             divSlide.id = "slide";
+            divSlide.classList.add("contactSlide");
             // ^ Create variable divSlide with id as "slide".
 
-            for (letter in displaySlide.socialMedia.subHeader) {
-                var contentBlock = document.createElement("div");
-                contentBlock.classList.add("contentBlock");
-                // ^ Create variable contentBlock with class contentBlock.
+            var socialMediaBlock = document.createElement("div");
+            socialMediaBlock.classList.add("socialMediaBlock");
 
-                var subHeader = document.createElement("h3");
-                var url = document.createElement("a");
-                url.href = displaySlide.socialMedia.url[letter];
-                url.target = "_blank";
-                // ^ Create variable subHeader and url and give url the corresponding letter of the url object and target value of "_blank".
+            if ($(window).width() < 1000) {
+                for (letter in displaySlide.socialMedia.subHeader) {
+                    var contentBlock = document.createElement("div");
+                    contentBlock.classList.add("contentBlock");
+                    // ^ Create variable contentBlock with class contentBlock.
 
-                subHeader.innerText = displaySlide.socialMedia.subHeader[letter];
-                url.innerText = displaySlide.socialMedia.url[letter];
-                // ^ Give subHeader and url values of letter for their corresponding object.
+                    var subHeader = document.createElement("h3");
+                    var url = document.createElement("p");
+                    var link = document.createElement("a");
+                    link.href = displaySlide.socialMedia.url[letter];
+                    link.target = "_blank";
+                    // ^ Create variable subHeader, url, and link, then give link the corresponding letter of the url object and target value of "_blank".
 
-                contentBlock.appendChild(subHeader);
-                contentBlock.appendChild(url);
-                // ^ Send subHeader and url to contentBlock.
+                    link.innerText = displaySlide.socialMedia.subHeader[letter];
 
-                divSlide.appendChild(contentBlock);
-                // ^ Send contentBlock to divSlide.
+                    if (letter === "a") {
+                        url.innerText = "danielmoffitt54";
+                    } else {
+                        url.innerText = "Danielmoffitt54";
+                    }
+                    // ^ Give url the value of letter for subHeader object.
+
+                    subHeader.appendChild(link);
+
+                    contentBlock.appendChild(subHeader);
+                    contentBlock.appendChild(url);
+
+                    socialMediaBlock.appendChild(contentBlock);
+                }
+                // ^ For each letter inside socialMedia subHeader object of slide4, create a div, h3, and anchor elements, with the letter value of slide4's socialMedia objects.
+            } else {
+                for (letter in displaySlide.socialMedia.subHeader) {
+                    var contentBlock = document.createElement("div");
+                    contentBlock.classList.add("contentBlock");
+                    // ^ Create variable contentBlock with class contentBlock.
+
+                    var subHeader = document.createElement("h3");
+                    var url = document.createElement("a");
+                    url.href = displaySlide.socialMedia.url[letter];
+                    url.target = "_blank";
+                    // ^ Create variable subHeader and url and give url the corresponding letter of the url object and target value of "_blank".
+
+                    subHeader.innerText = displaySlide.socialMedia.subHeader[letter];
+                    url.innerText = displaySlide.socialMedia.url[letter];
+                    // ^ Give subHeader and url values of letter for their corresponding object.
+
+                    contentBlock.appendChild(subHeader);
+                    contentBlock.appendChild(url);
+                    // ^ Send subHeader and url to contentBlock.
+
+                    socialMediaBlock.appendChild(contentBlock);
+                    // ^ Send contentBlock to divSlide.
+                }
+                // ^ For each letter inside socialMedia subHeader object of slide4, create a div, h3, and anchor elements, with the letter value of slide4's socialMedia objects.
             }
-            // ^ For each letter inside socialMedia subHeader object of slide4, create a div, h3, and anchor elements, with the letter value of slide4's socialMedia objects.
+            // ^ If window width is less than 400px do the first, else do second
+
+            divSlide.appendChild(socialMediaBlock);
+
+            var resumeBlock = document.createElement("div");
+            resumeBlock.classList.add("resumeBlock");
+            // ^ Create variable resumeBlock with class resumeBlock.
+
+            var subHeader = document.createElement("h3");
+            var anchor = document.createElement("a");
+            anchor.href = displaySlide.resume.url;
+            anchor.target = "_target";
+            // ^ Create variable subHeader and anchor and give anchor the corresponding letter of the href object and target value of "_blank".
+
+            anchor.innerText = displaySlide.resume.subHeader;
+            // ^ Give subHeader the  value of resume's subHeader as a concatenated string and anchor the value of resume's link.
+
+            subHeader.appendChild(anchor);
+            resumeBlock.appendChild(subHeader);
+            divSlide.appendChild(resumeBlock);
 
 
             for (letter in displaySlide.personal.subHeader) {
@@ -509,27 +513,6 @@
                 // ^ Send contentBlock inside divSlide.
             }
             // ^ For each letter inside personal subHeader object of slide4, create a div, h3, and p elements, with the letter value of slide4's personal objects.
-
-            var contentBlock = document.createElement("div");
-            contentBlock.classList.add("contentBlock");
-            // ^ Create variable contentBlock with class contentBlock.
-
-            var subHeader = document.createElement("h3");
-            var anchor = document.createElement("a");
-            anchor.href = displaySlide.resume.url;
-            anchor.target = "_target";
-            // ^ Create variable subHeader and anchor and give anchor the corresponding letter of the href object and target value of "_blank".
-
-            subHeader.innerText = displaySlide.resume.subHeader;
-            anchor.innerText = displaySlide.resume.link;
-            // ^ Give subHeader the  value of resume's subHeader as a concatenated string and anchor the value of resume's link.
-
-            contentBlock.appendChild(subHeader);
-            contentBlock.appendChild(anchor);
-            // ^ Send subHeader and anchor inside contentBlock.
-
-            divSlide.appendChild(contentBlock);
-            // ^ Send contentBlock inside divSlide.
 
             displayMain.appendChild(divSlide);
             // ^ Send divSlide inside displayMain to be displayed on index.html.
