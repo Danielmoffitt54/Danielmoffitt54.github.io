@@ -23,7 +23,7 @@ body {
         height: 60px;
         background: linear-gradient(#6f068c, #bd00fc);
         display: grid;
-        grid-template-columns: 15% 70% 15%;
+        grid-template-columns: 20% 60% 20%;
     }
 
     .navBox, .displayBox {
@@ -52,7 +52,8 @@ body {
     }
 
     #prevSlide, #nextSlide {
-        height: 100%;
+        border-radius: 50%;
+        background: linear-gradient(#000, #303030);
     }
 
     #dropUpMenu {
@@ -84,7 +85,8 @@ body {
     }
 
     .dropUpBtn h3 {
-        margin: 5px 0;
+        margin: 10px 0;
+        text-align: center;
     }
 
     .navBar button:focus {
