@@ -52,8 +52,8 @@ body {
     }
 
     #prevSlide, #nextSlide {
-        border-radius: 50%;
-        background: linear-gradient(#000, #303030);
+        border-radius: 50% !important;
+        background: linear-gradient(#000, #303030) !important;
     }
 
     #dropUpMenu {
