@@ -1,17 +1,59 @@
+:root {
+    /* colors */
+    --lightPurple: #bd00fc;
+    --purple: #6f068c;
+    --white: #f5f5f5;
+    --gray: #8f8f8f;
+    --darkGray: #303030;
+    --black: #000;
+    /* dropUpMenu */
+    --fadedOut: rgba(48, 48, 48, 0.85);
+    /* Monitor view navBar */
+    --buttonHover: rgba(245, 245, 245, 0.15);
+    --buttonActive: rgba(245, 245, 245, 0.25);
+    --buttonFade: rgba(245, 245, 245,0);
+}
+
 body {
     margin: 0;
-    background-color: #303030;
+    background-color: var(--darkGray);
     font-family: 'Maven Pro', sans-serif;
-    color: #f5f5f5;
+    color: var(--white);
     font-family: 'Permanent Marker', cursive;
     font-family: 'Maven Pro', sans-serif;
+}
+
+/* Anchors */
+a {
+    color: var(--lightPurple);
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+a:active {
+    color: var(--purple);
+}
+
+a:visited {
+    color: var(--gray);
+}
+
+/* Contact slide  */
+.contactSlide a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.contactSlide h2 {
+    margin-bottom: 15px !important;
 }
 
 /* mobile view */
 @media screen and (max-width: 999px){
 
         /* NavBar */
-
     .headerImg, .headerDivider {
         display: none;
     }
@@ -21,7 +63,7 @@ body {
         bottom: 0;
         width: 100%;
         height: 60px;
-        background: linear-gradient(#6f068c, #bd00fc);
+        background: linear-gradient(var(--purple), var(--lightPurple));
         display: grid;
         grid-template-columns: 20% 60% 20%;
     }
@@ -35,7 +77,7 @@ body {
     .navBar i {
         font-size: 36px !important;
         /* ^ Gives priority over current font size */
-        color: #f5f5f5;
+        color: var(--white);
     }
 
     #displayHeader {
@@ -45,15 +87,15 @@ body {
         margin: 0;
         padding: 0 15px;
         font-size: 32px;
-        background: linear-gradient(#000, #303030);
-        color: #f5f5f5;
+        background: linear-gradient(var(--black), var(--darkGray));
+        color:  var(--white);
         border: none;
         border-radius: 50px;
     }
 
     #prevSlide, #nextSlide {
         border-radius: 50% !important;
-        background: linear-gradient(#000, #303030) !important;
+        background: linear-gradient(var(--black), var(--darkGray)) !important;
     }
 
     #dropUpMenu {
@@ -65,13 +107,13 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        background-color: rgba(48, 48, 48, 0.85);
+        background-color: var(--fadedOut);
     }
 
     .dropUpBtn {
         margin: 0 15px;
         padding: 0;
-        color: #f5f5f5;
+        color:  var(--white);
         border: none;
         background-color: transparent;
     }
@@ -79,7 +121,7 @@ body {
     .dropUpImg {
         width: 70px;
         height: 70px;
-        border: solid 2px #f5f5f5;
+        border: solid 2px  var(--white);
         border-radius: 10px;
     }
 
@@ -117,12 +159,12 @@ body {
 
     #slide h3 {
         font-size: 18pt;
-        color: #bd00fc;
+        color: var(--lightPurple);
     }
 
     #slide h4 {
         font-size: 12pt;
-        color: #8f8f8f;
+        color: var(--gray);
     }
 
     #slide h3, #slide h4 {
@@ -131,11 +173,11 @@ body {
 
         /* About Slide */
     .firstName {
-        color: #bd00fc;
+        color: var(--lightPurple);
     }
 
     .lastName {
-        color: #8f8f8f;
+        color: var(--gray);
     }
 
     .aboutDivider {
@@ -161,7 +203,7 @@ body {
 
     .skillsIcon {
         margin: 5px;
-        color: #f5f5f5 !important;
+        color: var(--white) !important;
     }
 
     .skillsSlide li {
@@ -171,14 +213,14 @@ body {
         /* Projects Slide */
     .projectBlock {
         margin: 25px 0;
-        border: 2px solid #f5f5f5;
+        border: 2px solid var(--white);
         border-radius: 10px;
     }
 
     .projectsSlide h3 {
         padding: 5px 10px;
-        background-color: #f5f5f5;
-        color: #8f8f8f !important;
+        background-color: var(--white);
+        color: var(--gray) !important;
         border-top-left-radius: 7px;
         border-top-right-radius: 7px;
     }
@@ -190,30 +232,12 @@ body {
     .projectsSlide p {
         margin: 0;
         padding: 5px 8px;
-        border-top: solid 1px #f5f5f5;
+        border-top: solid 1px var(--white);
     }
 
         /* Contact Slide */
     .contactSlide {
         text-align: center;
-    }
-
-    .socialMediaBlock {
-        margin-bottom: 10px;
-        display: grid;
-        grid-template-columns: auto auto;
-    }
-
-    .resumeBlock {
-        width: 80%;
-        margin: 0 auto 10px;
-        padding: 10px 0;
-        border-radius: 10px;
-        background-color: #8f8f8f;
-    }
-
-    a {
-        color: #bd00fc;
     }
 
     /* mobile view rotated */
@@ -281,7 +305,7 @@ body {
 
     .navBar {
         height: 100%;
-        background: linear-gradient( #6f068c, #bd00fc);
+        background: linear-gradient(var(--purple), var(--lightPurple));
     }
 
     .displayBox {
@@ -296,9 +320,8 @@ body {
         height: 200px;
         display: block;
         margin: 25px auto;
-        border: solid 3px #f5f5f5;
+        border: solid 3px var(--white);
         border-radius: 50%;
-        background-color: #303030;
     }
 
     .headerDivider {
@@ -316,14 +339,14 @@ body {
         display: block;
         margin: 5px auto;
         font-family: 'Maven Pro', sans-serif;
-        color: #f5f5f5;
+        color: var(--white);
         background: transparent;
     }
 
     .dropUpBtn h3 {
         margin: 10px 0;
         font-size: 20pt;
-        color: #f5f5f5 !important;
+        color: var(--white) !important;
     }
 
     button {
@@ -335,11 +358,11 @@ body {
     }
 
     .dropUpBtn:hover {
-        background: linear-gradient( to right, rgba(245, 245, 245,0), rgba(245, 245, 245, 0.15), rgba(245, 245, 245,0));
+        background: linear-gradient( to right, var(--buttonFade), var(--buttonHover), var(--buttonFade));
     }
 
     .activeSlide {
-        background: linear-gradient( to right, rgba(245, 245, 245,0), rgba(245, 245, 245, 0.25), rgba(245, 245, 245,0)) !important;
+        background: linear-gradient( to right, var(--buttonFade), var(--buttonActive), var(--buttonFade)) !important;
         /* ^ Gives priority over .dropUpBtn:hover background rule */
     }
 
@@ -354,12 +377,12 @@ body {
 
     h3 {
         font-size: 20pt;
-        color: #bd00fc;
+        color: var(--lightPurple);
     }
 
     h4 {
         font-size: 16pt;
-        color: #8f8f8f;
+        color: var(--gray);
     }
 
     .firstName, .lastName {
@@ -369,12 +392,12 @@ body {
     }
 
     .firstName {
-        color: #bd00fc;
+        color: var(--lightPurple);
     }
 
     .lastName {
         margin-left: 25px;
-        color: #8f8f8f;
+        color: var(--gray);
     }
 
     .aboutSlide h3 {
@@ -399,14 +422,14 @@ body {
     /* Projects Slide */
     .projectBlock {
         margin: 25px 0;
-        border: 2px solid #f5f5f5;
+        border: 2px solid var(--white);
         border-radius: 10px;
     }
 
     .projectsSlide h3 {
         margin: 0;
-        background-color: #f5f5f5;
-        color: #8f8f8f !important;
+        background-color: var(--white);
+        color: var(--gray) !important;
         border-top-left-radius: 7px;
         border-top-right-radius: 7px;
     }
@@ -418,7 +441,7 @@ body {
     .projectsSlide p {
         margin: 0;
         padding: 5px 8px;
-        border-top: solid 1px #f5f5f5;
+        border-top: solid 1px var(--white);
     }
     
     .contactSlide h3 {

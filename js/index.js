@@ -36,7 +36,7 @@
     
     var slide1 = {
         title: "Education",
-        intro: "List education and give brief summary of each.",
+        intro: "This provides mos.",
         subHeader: {
             a: "Barren County Interapt Skills | Cohort II",
         },
@@ -54,7 +54,7 @@
 
     var slide2 = {
         title: "Skills",
-        intro: "",
+        intro: "Provides ",
         subHeader: {
             a: "Programing Languages & Tools",
             b: "Additional",
@@ -80,27 +80,31 @@
         intro: "List below provides projects I have worked on and currently building.",
         subHeader: {
             a: "Vette City Lacrosse",
-            b: "JavaScript Clock",
-            c: "Tip Calculator",
-            d: "To-Do list",
+            b: "Pokemon API",
+            c: "JavaScript Clock",
+            d: "Tip Calculator",
+            e: "To-Do list",
         },
         href: {
             a: "https://github.com/Danielmoffitt54/Vandals-Website",
-            b: "https://github.com/Danielmoffitt54/JavaScript-Clock",
-            c: "https://github.com/Danielmoffitt54/Tip-Calculator",
-            d: "https://github.com/Danielmoffitt54/To-Do-List",
+            b: "https://github.com/Danielmoffitt54/Pokemon-API-Site",
+            c: "https://github.com/Danielmoffitt54/JavaScript-Clock",
+            d: "https://github.com/Danielmoffitt54/Tip-Calculator",
+            e: "https://github.com/Danielmoffitt54/To-Do-List",
         },
         description: {
             a: "Create an account to sign up or browse over a variety of offered packages or to shop online for team merchandise.",
-            b: "Clock updating every second displaying the current day of the week, date, and local time.",
-            c: "Enter your total bill amount, service cost, and number of people sharing the bill, to determine your tip and total cost for each person.",
-            d: "Enter what you need to do inside the input box then manage your list by marking if completed or removing an item.",
+            b: "Online pokedex with an input linked to and API. The user can search for pokemon by ID number or by name and then retrieve data from PokeAPI to be displayed below the header.",
+            c: "Clock updating every second displaying the current day of the week, date, and local time.",
+            d: "Enter your total bill amount, service cost, and number of people sharing the bill, to determine your tip and total cost for each person.",
+            e: "Enter what you need to do inside the input box then manage your list by marking if completed or removing an item.",
         },
         info: {
             a: "Website (Current Project)",
             b: "Webpage",
             c: "Webpage",
             d: "Webpage",
+            e: "Webpage",
         }
     }
     // ^ slide4 end.
@@ -108,14 +112,24 @@
     var slide4 = {
         title: "Contact",
         socialMedia: {
-            subHeader: {
+            text: "Follow my progress on ",
+            account: {
                 a: "LinkedIn",
                 b: "GitHub",
+                c: "Twitter",
             },
             url: {
                 a: "https://www.linkedin.com/in/danielmoffitt54/",
                 b: "https://github.com/Danielmoffitt54",
+                c: "https://twitter.com/DMoffitt54",
             },
+        },
+        resume: {
+            text: {
+                a: "For my resume PDF ",
+                b: "click here",
+            },
+            url: "",
         },
         personal: {
             subHeader: {
@@ -126,10 +140,6 @@
                 a: "DanielMoffitt54@Gmail.com",
                 b: "Glasgow, KY",
             },
-        },
-        resume: {
-            subHeader: "Resume",
-            url: "",
         },
     }
     // ^ slide5 end.
@@ -411,86 +421,40 @@
             divSlide.id = "slide";
             divSlide.classList.add("contactSlide");
             // ^ Create variable divSlide with id as "slide".
+            
+            var socialMediaStr = document.createElement("h2");
+            // ^ Create variables socialMediaStr.
 
-            var socialMediaBlock = document.createElement("div");
-            socialMediaBlock.classList.add("socialMediaBlock");
+            socialMediaStr.innerText = displaySlide.socialMedia.text;
+            // ^ Give socialMediaStr inner text the object's text value.
 
-            if ($(window).width() < 1000) {
-                for (letter in displaySlide.socialMedia.subHeader) {
-                    var contentBlock = document.createElement("div");
-                    contentBlock.classList.add("contentBlock");
-                    // ^ Create variable contentBlock with class contentBlock.
+            for (letter in displaySlide.socialMedia.account) {
+                var anchor = document.createElement("a");
+                anchor.href = displaySlide.socialMedia.url[letter];
+                anchor.target = "_blank"
+                anchor.innerText = displaySlide.socialMedia.account[letter];
+                // ^ Create variable anchor and give href and inner text values corresponding to the letter inside their objects then give a target value of "_blank".
 
-                    var subHeader = document.createElement("h3");
-                    var url = document.createElement("p");
-                    var link = document.createElement("a");
-                    link.href = displaySlide.socialMedia.url[letter];
-                    link.target = "_blank";
-                    // ^ Create variable subHeader, url, and link, then give link the corresponding letter of the url object and target value of "_blank".
-
-                    link.innerText = displaySlide.socialMedia.subHeader[letter];
-
-                    if (letter === "a") {
-                        url.innerText = "danielmoffitt54";
-                    } else {
-                        url.innerText = "Danielmoffitt54";
-                    }
-                    // ^ Give url the value of letter for subHeader object.
-
-                    subHeader.appendChild(link);
-
-                    contentBlock.appendChild(subHeader);
-                    contentBlock.appendChild(url);
-
-                    socialMediaBlock.appendChild(contentBlock);
-                }
-                // ^ For each letter inside socialMedia subHeader object of slide4, create a div, h3, and anchor elements, with the letter value of slide4's socialMedia objects.
-            } else {
-                for (letter in displaySlide.socialMedia.subHeader) {
-                    var contentBlock = document.createElement("div");
-                    contentBlock.classList.add("contentBlock");
-                    // ^ Create variable contentBlock with class contentBlock.
-
-                    var subHeader = document.createElement("h3");
-                    var url = document.createElement("a");
-                    url.href = displaySlide.socialMedia.url[letter];
-                    url.target = "_blank";
-                    // ^ Create variable subHeader and url and give url the corresponding letter of the url object and target value of "_blank".
-
-                    subHeader.innerText = displaySlide.socialMedia.subHeader[letter];
-                    url.innerText = displaySlide.socialMedia.url[letter];
-                    // ^ Give subHeader and url values of letter for their corresponding object.
-
-                    contentBlock.appendChild(subHeader);
-                    contentBlock.appendChild(url);
-                    // ^ Send subHeader and url to contentBlock.
-
-                    socialMediaBlock.appendChild(contentBlock);
-                    // ^ Send contentBlock to divSlide.
-                }
-                // ^ For each letter inside socialMedia subHeader object of slide4, create a div, h3, and anchor elements, with the letter value of slide4's socialMedia objects.
+                socialMediaStr.appendChild(anchor);
+                // ^ Send anchor inside socialMediaStr.
             }
-            // ^ If window width is less than 400px do the first, else do second
 
-            divSlide.appendChild(socialMediaBlock);
+            divSlide.appendChild(socialMediaStr);
+            // ^ Send socialMediaStr inside divSlide.
 
-            var resumeBlock = document.createElement("div");
-            resumeBlock.classList.add("resumeBlock");
-            // ^ Create variable resumeBlock with class resumeBlock.
-
-            var subHeader = document.createElement("h3");
+            var resumeStr = document.createElement("h2");
             var anchor = document.createElement("a");
             anchor.href = displaySlide.resume.url;
             anchor.target = "_target";
-            // ^ Create variable subHeader and anchor and give anchor the corresponding letter of the href object and target value of "_blank".
+            // ^ Create variable resumeStr and anchor and give anchor the  href value of object's url value and target value of "_blank".
 
-            anchor.innerText = displaySlide.resume.subHeader;
-            // ^ Give subHeader the  value of resume's subHeader as a concatenated string and anchor the value of resume's link.
+            resumeStr.innerText = displaySlide.resume.text.a;
+            anchor.innerText = displaySlide.resume.text.b;
+            // ^ Give resumeStr and anchor the values of object's text letters a and b.
 
-            subHeader.appendChild(anchor);
-            resumeBlock.appendChild(subHeader);
-            divSlide.appendChild(resumeBlock);
-
+            resumeStr.appendChild(anchor);
+            divSlide.appendChild(resumeStr);
+            // ^ Send anchor inside resumeStr and then send to divSlide.
 
             for (letter in displaySlide.personal.subHeader) {
                 var contentBlock = document.createElement("div");
@@ -565,13 +529,26 @@
     // ^ Listener for function previousSlide.
 
     function interactNav() {
+        var screenHeight = $(window).height();
+        var mobileNavBar = 60;
+        var tabletNavBar = 100;
+        // ^ Create variables screenHeight, mobileNavBar, and tabletNavBar.
+        
+
         if (navBar.style.display === "none") {
             navBar.style.display = "flex";
+            if (screenHeight >= 900 && screenHeight < 1000) {
+                navBar.style.height = screenHeight - tabletNavBar + "px";
+            } else {
+                navBar.style.height = screenHeight - mobileNavBar + "px";
+            }
+            // ^ If screenHeight is between 900 - 999, make the dropUpMenu height equal to screenHeight - tabletNavBar in pixels else screenHeight - mobileNavBar in pixels.
         } else {
             navBar.style.display = "none";
         }
+        // ^ If Navbar is not displayed, give display of flex. If display is shown, give display of none.
     }
-    // ^ If Navbar is not displayed, give display of flex. If display is shown, give display of none.
+    // ^ Shows and hides dropUpMenu on click and sets the hieght of it to height minus navBar's height
 
     displayHead.addEventListener("click", interactNav);
     // ^ Listener of function interactNav.
