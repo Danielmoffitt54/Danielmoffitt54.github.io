@@ -26,7 +26,7 @@
             d: "Interest"
         },
         text: {
-            a: "Driven by challenge, my ambition, and the unknown, I strive to become a creative developer that is adaptable, innovative, and relied on by others.  With history in team management and critical thinking under pressure, I pursue my new found passion as a software developer .",
+            a: "Driven by challenge, my ambition, and the unknown, I strive to become a creative developer that is adaptable, innovative, and relied on by others.  With history in team management and critical thinking under pressure, I pursue my new found passion as a software developer.",
             b: "Aspiring Junior Software Developer seeking opportunities to challenge myself and broaden my knowledge while providing quality teamwork and pursuing my passion.",
             c: "For the past 2 years I've been an assistant coach for South Warren High School and Vette City Lacrosse.  I was responsible for coaching the defense to the players as well as analyze strategies in films and games.  Last year we took the second year program of South Warren to state semi-finals and this summer Vette City won the title King of Queens in Cinncinati, Ohio.  Through it all, watching the players grow as a person and player over the past couple years has to be the most satisfying of all.",
             d: "I'm also a board game enthusiast.  Turn-based strategy along with deck builders have to be among my most favorite genres.  Whether its a strategy working people with or the competition against people, the strategies you use never work twice and sometimes you lose games but learning from it makes the experience all the more enjoyable.",
