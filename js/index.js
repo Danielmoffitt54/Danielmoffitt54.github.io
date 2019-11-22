@@ -89,6 +89,7 @@
             d: "JavaScript Clock",
             e: "Tip Calculator",
             f: "To-Do list",
+            g: "Group-Project"
         },
         href: {
             a: "https://github.com/Danielmoffitt54/Pomodoro-Clock",
@@ -97,6 +98,7 @@
             d: "https://github.com/Danielmoffitt54/JavaScript-Clock",
             e: "https://github.com/Danielmoffitt54/Tip-Calculator",
             f: "https://github.com/Danielmoffitt54/To-Do-List",
+            g: "https://github.com/Danielmoffitt54/Group-Project"
         },
         description: {
             a: "Continuous running clock to manage your time spent working by setting session and break times. ",
@@ -105,6 +107,7 @@
             d: "Clock updating every second displaying the current day of the week, date, and local time.",
             e: "Enter your total bill amount, service cost, and number of people sharing the bill, to determine your tip and total cost for each person.",
             f: "Enter what you need to do inside the input box then manage your list by marking if completed or removing an item.",
+            g: "App that is powered by Petfinder API, that displays a certain pet or list of animals that can be searched/filtered by name, type, gender, age, and size.",
         },
         info: {
             a: "Webpage",
@@ -112,7 +115,8 @@
             c: "Webpage",
             d: "Webpage",
             e: "Webpage",
-            f: "Webpage (Current Project)",
+            f: "Webpage",
+            g: "Website"
         }
     }
     // ^ slide4 end.
